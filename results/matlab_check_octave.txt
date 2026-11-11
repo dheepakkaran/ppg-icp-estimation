@@ -1,0 +1,1 @@
+windows=20  mean peaks per window=104.50

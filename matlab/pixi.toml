@@ -1,0 +1,8 @@
+[workspace]
+name = "ppg-icp-octave"
+channels = ["conda-forge"]
+platforms = ["linux-64"]
+
+[dependencies]
+octave = "*"
+octave-signal = ">=1.4.8,<2"

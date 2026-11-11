@@ -1,0 +1,9 @@
+{
+  "engine": "GNU Octave 10.3.0",
+  "windows": 20,
+  "filtered_max_abs_diff": 7.969788758943608e-07,
+  "filtered_max_abs_diff_interior": 7.135850361716933e-07,
+  "peaks_python": 2090,
+  "peaks_matlab": 2090,
+  "peaks_identical_index": 2090
+}

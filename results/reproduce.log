@@ -1,0 +1,70 @@
+uv sync --frozen --python 3.12
+Audited 50 packages in 31ms
+.venv/bin/python scripts/fetch.py 12 2
+p000402 ['p00/p000402/p000402-2161-04-16-02-02'] windows=0 segs=0 2s
+p004904 ['p00/p004904/p004904-2193-06-17-03-04'] windows=20 segs=-1 0s
+p006621 ['p00/p006621/p006621-2131-05-24-07-05'] windows=3 segs=-1 0s
+p007184 ['p00/p007184/p007184-2116-12-15-06-58'] windows=120 segs=-1 0s
+p008848 ['p00/p008848/p008848-2148-07-30-17-12'] windows=8 segs=-1 0s
+p011003 ['p01/p011003/p011003-2119-05-17-14-20'] windows=0 segs=0 5s
+p011901 ['p01/p011901/p011901-2184-05-31-09-44', 'p01/p011901/p011901-2184-05-31-19-22'] windows=40 segs=-1 0s
+p016590 ['p01/p016590/p016590-2181-05-26-20-15'] windows=120 segs=-1 0s
+p017875 ['p01/p017875/p017875-2157-11-16-15-43'] windows=120 segs=-1 0s
+p022933 ['p02/p022933/p022933-2111-04-23-17-31'] windows=0 segs=0 0s
+p025658 ['p02/p025658/p025658-2179-01-15-14-01'] windows=0 segs=0 3s
+p027162 ['p02/p027162/p027162-2171-08-15-21-03', 'p02/p027162/p027162-2171-08-18-17-17', 'p02/p027162/p027162-2171-08-20-17-31'] windows=120 segs=-1 0s
+p027338 ['p02/p027338/p027338-2125-01-05-23-04'] windows=1 segs=-1 0s
+p027833 ['p02/p027833/p027833-2150-02-27-17-29'] windows=1 segs=-1 0s
+p027845 ['p02/p027845/p027845-2181-12-19-22-12'] windows=120 segs=-1 0s
+p028075 ['p02/p028075/p028075-2196-03-14-16-21', 'p02/p028075/p028075-2196-03-15-11-41'] windows=120 segs=-1 0s
+p028644 ['p02/p028644/p028644-2121-07-26-17-13'] windows=0 segs=0 5s
+p029035 ['p02/p029035/p029035-2155-03-11-20-29'] windows=0 segs=0 1s
+p029527 ['p02/p029527/p029527-2168-03-11-17-54'] windows=120 segs=-1 0s
+p029569 ['p02/p029569/p029569-2134-02-22-17-47'] windows=4 segs=-1 0s
+p031574 ['p03/p031574/p031574-2114-12-28-09-31'] windows=0 segs=0 0s
+p032377 ['p03/p032377/p032377-2139-03-12-00-03'] windows=0 segs=0 1s
+p040084 ['p04/p040084/p040084-2173-02-01-00-51'] windows=120 segs=-1 0s
+p040673 ['p04/p040673/p040673-2125-05-30-21-37'] windows=120 segs=-1 0s
+p040867 ['p04/p040867/p040867-2108-05-18-11-14', 'p04/p040867/p040867-2108-05-18-21-41'] windows=120 segs=-1 0s
+.venv/bin/python scripts/build_features.py
+kept 882 of 1277 windows from 14 subjects
+.venv/bin/python -m pytest -q tests
+....                                                                     [100%]
+4 passed in 2.23s
+.venv/bin/python scripts/run_models.py
+reg baseline_mean 0s
+reg ridge 1s
+reg gboost 2s
+classification_icp_gt20 baseline_mean 3s
+classification_icp_gt20 logistic 6s
+classification_icp_gt20 gboost 13s
+classification_icp_gt22 baseline_mean 16s
+classification_icp_gt22 logistic 18s
+classification_icp_gt22 gboost 26s
+{
+ "n_patients": 10,
+ "n_windows": 872,
+ "pct_windows_icp_gt20": 4.472477064220183
+}
+regression baseline_mean {'mae_heldout': 5.045, 'mae_heldout_ci95': [3.700295985114832, 6.654419075553233], 'mae_training': 4.728}
+regression ridge {'mae_heldout': 6.683, 'mae_heldout_ci95': [4.864453004884226, 9.304180264082424], 'mae_training': 4.196}
+regression gboost {'mae_heldout': 7.136, 'mae_heldout_ci95': [5.077057711996954, 10.021389467644015], 'mae_training': 1.887}
+regression cnn1d {'mae_heldout': 5.947, 'mae_heldout_ci95': [3.960653985952584, 8.473665792268546], 'mae_training': 3.408}
+classification_icp_gt20 baseline_mean {'auroc_heldout': 0.136, 'auroc_heldout_ci95': [0.04126438105821417, 0.29623612844067604], 'auroc_training': 0.5}
+classification_icp_gt20 logistic {'auroc_heldout': 0.648, 'auroc_heldout_ci95': [0.38760693435211113, 0.8931274428863274], 'auroc_training': 0.859}
+classification_icp_gt20 gboost {'auroc_heldout': 0.716, 'auroc_heldout_ci95': [0.5207343258192526, 0.8922753933711683], 'auroc_training': 1.0}
+classification_icp_gt20 cnn1d {'auroc_heldout': 0.389, 'auroc_heldout_ci95': [0.12841872812142718, 0.663116182430476], 'auroc_training': 0.906}
+PTT 0.013430489860275027 -0.07815351804075046
+windows=20  mean peaks per window=104.50
+{
+ "engine": "GNU Octave 10.3.0",
+ "windows": 20,
+ "filtered_max_abs_diff": 7.969788758943608e-07,
+ "filtered_max_abs_diff_interior": 7.135850361716933e-07,
+ "peaks_python": 2090,
+ "peaks_matlab": 2090,
+ "peaks_identical_index": 2090
+}
+.venv/bin/python scripts/make_results.py
+wrote RESULTS.md, DATA_QUALITY.md
+EXIT 0

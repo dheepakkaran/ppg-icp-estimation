@@ -1,0 +1,142 @@
+{
+  "n_patients": 10,
+  "n_windows": 872,
+  "min_kept_windows_per_patient": 10,
+  "patients": [
+    "p004904",
+    "p007184",
+    "p016590",
+    "p017875",
+    "p027162",
+    "p027845",
+    "p029527",
+    "p040084",
+    "p040673",
+    "p040867"
+  ],
+  "pct_windows_icp_gt20": 4.472477064220183,
+  "features": [
+    "ptt_ms",
+    "ptt_peak_ms",
+    "pulse_amp",
+    "rise_time_ms",
+    "width50_ms",
+    "hr_bpm",
+    "ibi_sd_ms",
+    "harm2_ratio",
+    "harm3_ratio"
+  ],
+  "validation": "leave-one-patient-out; held-out = pooled out-of-patient predictions; CI = 95% bootstrap over patients (1000 resamples); training = mean over folds",
+  "regression": {
+    "baseline_mean": {
+      "mae_heldout": 5.044961564122219,
+      "mae_heldout_ci95": [
+        3.700295985114832,
+        6.654419075553233
+      ],
+      "mae_training": 4.727653829039151
+    },
+    "ridge": {
+      "mae_heldout": 6.683093734423528,
+      "mae_heldout_ci95": [
+        4.864453004884226,
+        9.304180264082424
+      ],
+      "mae_training": 4.196266018625981
+    },
+    "gboost": {
+      "mae_heldout": 7.136309669018888,
+      "mae_heldout_ci95": [
+        5.077057711996954,
+        10.021389467644015
+      ],
+      "mae_training": 1.886764078108196
+    },
+    "cnn1d": {
+      "mae_heldout": 5.946624662214463,
+      "mae_heldout_ci95": [
+        3.960653985952584,
+        8.473665792268546
+      ],
+      "mae_training": 3.408359076335619
+    }
+  },
+  "classification_icp_gt20": {
+    "baseline_mean": {
+      "auroc_heldout": 0.1355773078462154,
+      "auroc_heldout_ci95": [
+        0.04126438105821417,
+        0.29623612844067604
+      ],
+      "auroc_training": 0.5
+    },
+    "logistic": {
+      "auroc_heldout": 0.6480746144611691,
+      "auroc_heldout_ci95": [
+        0.38760693435211113,
+        0.8931274428863274
+      ],
+      "auroc_training": 0.8590794131364043
+    },
+    "gboost": {
+      "auroc_heldout": 0.716163388432296,
+      "auroc_heldout_ci95": [
+        0.5207343258192526,
+        0.8922753933711683
+      ],
+      "auroc_training": 0.9999524516212741
+    },
+    "cnn1d": {
+      "auroc_heldout": 0.38855542216886757,
+      "auroc_heldout_ci95": [
+        0.12841872812142718,
+        0.663116182430476
+      ],
+      "auroc_training": 0.9059057352344551
+    }
+  },
+  "classification_icp_gt22": {
+    "baseline_mean": {
+      "auroc_heldout": 0.0360029616832233,
+      "auroc_heldout_ci95": [
+        0.0006103648439415105,
+        0.18460247473802388
+      ],
+      "auroc_training": 0.5
+    },
+    "logistic": {
+      "auroc_heldout": 0.8663540445486517,
+      "auroc_heldout_ci95": [
+        0.4802805874343513,
+        0.9990012211644593
+      ],
+      "auroc_training": 0.9915153886027358
+    },
+    "gboost": {
+      "auroc_heldout": 0.7425495156413895,
+      "auroc_heldout_ci95": [
+        0.1288928393413084,
+        0.9838599176398362
+      ],
+      "auroc_training": 1.0
+    }
+  },
+  "ptt_direction": {
+    "n_windows_with_ptt": 680,
+    "pooled_spearman_rho": 0.013430489860275027,
+    "within_patient_spearman_rho": {
+      "p004904": -0.42295992963494783,
+      "p007184": -0.5695790775990918,
+      "p016590": -0.013985436283394662,
+      "p017875": -0.09206721518942425,
+      "p027162": 0.06270777018226764,
+      "p027845": -0.07815351804075046,
+      "p029527": -0.10944919540896496,
+      "p040673": 0.0997684445916338,
+      "p040867": 0.28715672355103017
+    },
+    "median_within_patient_rho": -0.07815351804075046,
+    "n_patients_negative_rho": 6
+  },
+  "cnn_train_seconds": 34.46670436859131
+}

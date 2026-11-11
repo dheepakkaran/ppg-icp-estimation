@@ -1,0 +1,9 @@
+{
+  "engine": "MATLAB version: 26.2.0.3433840 (R2026b) Update 1",
+  "windows": 20,
+  "filtered_max_abs_diff": 1.9717278443298625e-06,
+  "filtered_max_abs_diff_interior": 1.9717278443298625e-06,
+  "peaks_python": 2090,
+  "peaks_matlab": 2090,
+  "peaks_identical_index": 2090
+}

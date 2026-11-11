@@ -1,0 +1,27 @@
+[project]
+name = "ppg-icp-estimation"
+version = "0.1.0"
+description = "Research prototype: ICP estimation from finger PPG on open MIMIC-III waveforms"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "wfdb>=4.1",
+  "numpy",
+  "scipy",
+  "pandas",
+  "pyarrow",
+  "scikit-learn",
+  "torch",
+  "pytest",
+  "requests",
+]
+
+[tool.uv]
+package = false
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }

@@ -98,13 +98,14 @@ footer{padding:44px 0 64px;font-size:13.5px;color:var(--muted)}
   .cols,.cols3{grid-template-columns:1fr;gap:28px} section{padding:72px 0} header{padding:80px 0 64px}
   th:nth-child(1),td:nth-child(1){padding-right:8px}
 }
+.overview{margin:0;padding:56px 0}.overview video{display:block;width:100%;aspect-ratio:16/9;background:#0a0a0a;border:1px solid var(--line);border-radius:6px}.overview figcaption{font-size:14px;color:var(--muted);margin-top:12px;line-height:1.5}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;scroll-behavior:auto!important}.fade{opacity:1;transform:none}}
 </style>
 </head>
 <body>
 <nav><div class="wrap">
   <a class="brand" href="#">PPG ICP Estimation</a>
-  <a href="#problem">Problem</a><a href="#approach">Approach</a><a href="#results">Results</a><a href="#demo">Demo</a><a href="#lessons">Lessons</a><a href="#run">Run</a>
+  <a href="#overview">Video</a><a href="#problem">Problem</a><a href="#approach">Approach</a><a href="#results">Results</a><a href="#demo">Demo</a><a href="#lessons">Lessons</a><a href="#run">Run</a>
   <a href="https://github.com/dheepakkaran/ppg-icp-estimation">GitHub</a>
 </div></nav>
 
@@ -116,6 +117,13 @@ footer{padding:44px 0 64px;font-size:13.5px;color:var(--muted)}
     <div class="meta"><span>Python · SciPy · scikit-learn · PyTorch · MATLAB R2026b</span><a href="https://github.com/dheepakkaran/ppg-icp-estimation">Source code</a><a href="https://github.com/dheepakkaran/ppg-icp-estimation/blob/main/RESULTS.md">Full results</a><a href="https://github.com/dheepakkaran/ppg-icp-estimation/blob/main/DATA_QUALITY.md">Data card</a></div>
   </div>
 </header>
+
+<div class="wrap">
+  <figure class="overview" id="overview">
+    <video controls playsinline preload="metadata" poster="media/overview.jpg"><source src="media/overview.mp4" type="video/mp4">Your browser cannot play this video. <a href="media/overview.mp4">Download it</a>.</video>
+    <figcaption>The whole project in 35 seconds, with sound. Real waveforms and results from the public, de-identified MIMIC-III Waveform Database: only 10 patients, a faint warning for pressure above 20 mmHg (held-out AUROC 0.72), no model beat the plain average on the exact pressure, and pulse transit time did not track ICP. Research prototype, not a medical device.</figcaption>
+  </figure>
+</div>
 
 <div class="wrap">
   <div class="stats">

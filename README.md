@@ -17,6 +17,10 @@ pressure (ICP) as ground truth, physiology-based features, and every model score
 ![tests](https://img.shields.io/badge/tests-4%20passing-22c55e)
 ![license](https://img.shields.io/badge/code-MIT-blue)
 
+<a href="https://dheepakkaran.github.io/ppg-icp-estimation/#overview"><img src="docs/media/overview.webp" alt="35-second overview: real ICU recordings, the pulse is cleaned, every heartbeat is measured, and each patient is tested by a model that never saw them" width="100%"></a>
+
+<sub>35-second overview (silent preview). <a href="https://dheepakkaran.github.io/ppg-icp-estimation/#overview">Watch it with sound on the project page →</a></sub>
+
 </div>
 
 > **Research prototype.** Open, de-identified ICU data. Not a medical device, no clinical claim. Independent project.
